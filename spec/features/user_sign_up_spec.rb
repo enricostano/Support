@@ -11,6 +11,6 @@ feature "user sign up" do
     fill_in "user_password_confirmation", with: "SoSecret"
     click_button "Sign up"
 
-    expect(page).to have_text("User was successfully created.")
+    expect(page).to have_text("Welcome Rebel Rebel!")
   end
 end
