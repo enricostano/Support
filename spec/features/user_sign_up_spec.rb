@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 feature "user sign up" do
-  scenario "sign up with valid data" do
+  scenario "land to welcome page if sign up with valid data" do
     visit '/users/sign_up'
     
     fill_in "Name", with: "Rebel Rebel"
@@ -13,7 +13,7 @@ feature "user sign up" do
 
     expect(page).to have_text("Welcome Rebel Rebel!")
   end
-  context "sign up with invalid data" do
+  context "rise errors if sign up with invalid data" do
     scenario "doesn't fill name" do
       visit '/users/sign_up'
     
