@@ -10,4 +10,10 @@ describe User do
   it "is invalid without a name" do
     FactoryGirl.build(:user, name: nil).should_not be_valid
   end
+  it "is invalid without a password" do
+    FactoryGirl.build(:user, password: nil).should_not be_valid
+  end
+  it "is invalid without a password_confirmation" do
+    FactoryGirl.build(:user, password_confirmation: nil).should_not be_valid
+  end
 end
