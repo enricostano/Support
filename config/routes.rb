@@ -1,5 +1,8 @@
 Support::Application.routes.draw do
-  devise_for :users
+  
+  get "signup_landing" => "landing#signup"
+
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   resources :users
 
