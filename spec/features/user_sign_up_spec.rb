@@ -34,6 +34,16 @@ feature "user sign up" do
 
       expect(page).to have_text("Email can't be blank")
     end
+    scenario "doesn't fill password" do
+      visit '/users/sign_up'
+    
+      fill_in "Name", with: "Rebel Rebel"
+      fill_in "Email", with: "rebel@rebel.reb"
+      fill_in "user_password_confirmation", with: "SoSecret"
+      click_button "Sign up"
+
+      expect(page).to have_text("Password can't be blank")
+    end
   end
 
 end
