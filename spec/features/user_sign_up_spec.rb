@@ -7,8 +7,8 @@ feature "user sign up" do
     
     fill_in "Name", with: "Rebel Rebel"
     fill_in "Email", with: "rebel@rebel.reb"
-    fill_in "Password", with: "SoSecret"
-    fill_in "Password confirmation", with: "SoSecret"
+    fill_in "user_password", with: "SoSecret"
+    fill_in "user_password_confirmation", with: "SoSecret"
     click_button "Sign up"
 
     expect(page).to have_text("User was successfully created.")
